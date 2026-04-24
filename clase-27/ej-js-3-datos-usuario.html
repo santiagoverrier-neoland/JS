@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomando datos de un usuario</title>
+</head>
+<body>
+    <h1>Mis datos</h1>
+
+    <button onclick="tomarDatos()">Preguntar...</button>
+
+    <script>
+        function tomarDatos() {
+            let nombre = prompt("Indicar nombre")
+            let edad = prompt("Indicar edad") // almacenará en TEXTO la respuesta
+            edad = Number(edad) // Convertirá la respuesta a número
+
+            // alert("Su nombre es" + nombre + "tiene " + edad + "años") // concatenación
+            // template string (Permite combinar variables con textos de forma más amigable)
+            alert(`Su nombre es ${nombre} tiene ${edad} años `) // backstick
+        }
+    </script>
+</body>
+</html>

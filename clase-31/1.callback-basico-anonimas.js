@@ -5,26 +5,15 @@ novedad!: también pueden pasarse FUNCIONES
 
 // Se llama la función ej: 'cuidado' dentro de la función principal 
 
-function alerta() {
-  return '🚨 ¡Peligro inminente!';
-}
-
-function cuidado() {
-  return '⚠️ ¡Advertencia!';
-}
-
-function accion(instruccion) { // callback
+function accion(instruccio, nombre = 'anónimo') { // callback
   console.log('Ejecutando acción...');
   console.log(instruccion()); // ✔️ se ejecuta acá
   console.log('enfriando cpu con los ventiladores...')
   console.log('Fin');
 }
-let temperatura = 150
-if (temperatura > 150 ) {
-  accion(alerta);
-} else if (temperatura > 120) {
-  accion(cuidado)
-}
+
+accion(() => '⚠️ ¡Advertencia!')
+accion(nombre => `⚠️ ¡Advertencia ${nombre}!`)
 
 
 

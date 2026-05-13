@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input, textarea {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    
+    
+    <div>
+        <label for="nombreImagen">Indicar URL de la imagen</label>
+        <input type="text" value="https://picsum.photos/400/250" id="nombreImagen">
+    </div>
+    <div>
+        <label for="descripcionImagen">Descripción de la imagen</label>
+        <textarea name="" id="descripcionImagen">Ejemplo aleatorio de una imagen</textarea>
+    </div>
+    
+    <img src="" alt="">
+
+    <script>
+        // tomo los valores de los campos
+        const campoImagen = document.querySelector("#nombreImagen").value
+        const campoDescripcion = document.querySelector("#descripcionImagen").value
+
+        // Selecciono la imagen
+        const imagen = document.querySelector("img")
+
+        // Le aplico el atributo
+        imagen.setAttribute("src", campoImagen)
+        imagen.setAttribute("alt", campoDescripcion)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Crear el elemento y ponerle un texto
+        const titulo = document.createElement("h1")
+        titulo.textContent = "Mi página web"
+        titulo.style = "color: blue"
+
+        // Hacer que se vea en el documento adjuntándolo como hijo 
+        const cuerpo = document.querySelector("body")
+        cuerpo.appendChild(titulo)
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+/* Variables */
+:root {
+  --bg-deep: rgb(13, 27, 46);
+  --bg-card: rgb(10, 10, 10); /* (Fondo de las tarjetas)*/
+  --text-bright: rgb(255, 255, 255); /* (Títulos y datos importantes) */
+  --text-dim: rgb(156, 163, 175); /* (Textos secundarios o etiquetas) */
+  --accent: rgb(34, 211, 238); /* (Botones y estados activos) */
+  --off-white: rgb(244, 246, 248);
+  --blue-700: rgb(34, 53, 86);
+}
+
+/* Estilos Mobile First */
+
+/* Generales */
+html {
+    font-size: 62.5%;
+     font-family: "Inter", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+ul {
+    list-style: none;
+}
+
+/* Estructura */
+body {
+  background-color: var(--bg-deep);
+}
+header {
+    color: var(--text-bright);
+}
+main {
+    background-color: var(--off-white);
+}
+footer {
+    color: var(--text-bright);
+}
+
+/* header */
+header .logo {
+    width: 155px;
+}
+
+/* Otras secciones */
+.card {
+    background-color: var(--blue-700);
+    padding: 40px;
+    border-radius: 15px;
+    color: var(--text-bright);
+}
+#dashboard div {
+    flex-basis: 50%;
+}
+#get-started {
+    background-color: var(--bg-deep);
+    color: var(--text-bright);
+    text-align: center;
+    padding: 140px 56px;
+}
+
+/* footer */
+footer {
+    font-size: 1.2rem;
+}
+footer .logo {
+    width: 110px;
+}
+
+/* Clases Flexbox */
+.flex {
+  /* contenedor flexbox */
+  display: flex;
+}
+.justify-space-between {
+    justify-content: space-between;
+}
+.justify-center { /* horizontal */
+    justify-content: center;
+}
+.align-center { /* vertical */
+    align-items: center;
+}
+.gap10 {
+    gap: 10px;
+}

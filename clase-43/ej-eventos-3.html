@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <label for="nombre">Tarea</label>
+    <input type="text" id="nombre" name="nombre">
+    <p class="error"></p>
+    <button>Agregar tarea</button>
+
+    <h2>Lista de tareas</h2>
+
+    <ul>
+
+    </ul>
+
+    <script>
+        const agregar = document.querySelector('button')
+
+        agregar.addEventListener('click', function() {
+            const valorNombre = document.querySelector('#nombre').value
+            const lista = document.querySelector('ul')
+            const error = document.querySelector('.error')
+
+            if (valorNombre != '') {
+                error.textContent = ''
+                // Al usar '+=', me permite AGREGAR, ya que si usaria el '=' solo, me reemplazaria el texto
+                lista.innerHTML += `<li> ${valorNombre}</li>`
+            } else {
+                
+                error.textContent = 'No debe quedar vacío'
+            }
+            
+        })
+    </script>
+</body>
+</html>

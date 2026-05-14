@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre">
+    <button>Agregar nombre</button>
+
+    <script>
+        const agregar = document.querySelector('button')
+
+        agregar.addEventListener('click', function() {
+            const valorNombre = document.querySelector('#nombre').value
+            const titulo = document.querySelector('h1')
+            titulo.textContent = valorNombre
+        })
+    </script>
+</body>
+</html>

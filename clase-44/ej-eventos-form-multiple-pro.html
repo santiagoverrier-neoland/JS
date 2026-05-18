@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form>
+        <div>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre">
+        </div>
+        <div>
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" name="apellido">
+        </div>
+        <div>
+            <label for="localidad">Localidad</label>
+            <input type="text" id="localidad" name="localidad">
+        </div>
+        <div>
+            <label for="pais">País</label>
+            <input type="text" id="pais" name="pais">
+        </div>
+        <div>
+            <label for="edad">Edad</label>
+            <input type="text" id="edad" name="edad">
+        </div>
+         <div>
+            <label for="correo">Correo Electrónico</label>
+            <input type="text" id="correo" name="correo">
+        </div>
+
+        <button type="submit">Enviar</button>
+
+    </form>
+
+
+
+    <p></p>
+
+    <script>
+        const formulario = document.querySelector('form')
+
+        formulario.addEventListener('submit', function (event) {
+            event.preventDefault()
+            const formData = new FormData(formulario)
+            const datos = Object.fromEntries(formData.entries()) 
+            
+            console.log(datos)
+            return datos
+        })
+    </script>
+</body>
+
+</html>

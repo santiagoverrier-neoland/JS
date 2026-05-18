@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form>
+        <div>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre">
+        </div>
+        <div>
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" name="apellido">
+        </div>
+        <div>
+            <label for="localidad">Localidad</label>
+            <input type="text" id="localidad" name="localidad">
+        </div>
+        <div>
+            <label for="pais">País</label>
+            <input type="text" id="pais" name="pais">
+        </div>
+        <div>
+            <label for="edad">Edad</label>
+            <input type="text" id="edad" name="edad">
+        </div>
+         <div>
+            <label for="correo">Correo Electrónico</label>
+            <input type="text" id="correo" name="correo">
+        </div>
+
+        <button type="submit">Enviar</button>
+
+    </form>
+
+
+
+    <p></p>
+
+    <script>
+        const agregar = document.querySelector('button')
+
+        agregar.addEventListener('click', function (event) {
+            event.preventDefault()
+
+            const valorNombre = document.querySelector('#nombre').value
+            const valorApellido = document.querySelector('#apellido').value
+            const valorLocalidad = document.querySelector('#localidad').value
+            const valorPais = document.querySelector('#pais').value
+            const valorEdad = document.querySelector('#edad').value
+            const valorCorreo = document.querySelector('#correo').value
+
+            // creo un objeto
+            const usuario = {
+                nombre: valorNombre,
+                apellido: valorApellido,
+                localidad: valorLocalidad,
+                pais: valorPais,
+                edad: valorEdad,
+                correo: valorCorreo
+            }
+            console.log(usuario)
+            return usuario
+
+        })
+    </script>
+</body>
+
+</html>

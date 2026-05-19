@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input:user-invalid {
+            border: 2px solid red;
+            background-color: rgb(255, 228, 228);
+        }
+
+        input:user-valid {
+            border: 2px solid green;
+            background-color: lightgreen
+        }
+
+        .error {
+            display: none;
+            font-size: 60px;
+            color: red;
+            padding: 20px;
+            border: solid 3px red;
+            background-color: rgb(255, 224, 224);
+        }
+
+        section {
+            display: flex;
+        }
+
+        .col {
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .col {
+                width: 50%;
+            }
+        }
+
+        form label {
+            display: inline-block;
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Manejo de productos</h1>
+
+    <section>
+        <div class="col">
+            <h2>Agregar producto</h2>
+            <form>
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre">
+                </div>
+                <div>
+                    <label for="precio">Precio en dólares</label>
+                    <input type="text" id="precio" name="precio">
+                </div>
+                <div>
+                    <label for="precio">Descripción</label>
+                    <input type="text" id="precio" name="precio">
+                </div>
+
+
+                <button type="submit">Enviar</button>
+
+            </form>
+        </div>
+        <div>
+            <h2>Productos registrados</h2>
+
+            <ul>
+
+            </ul>
+        </div>
+    </section>
+
+
+
+
+
+    <p></p>
+
+    <script>
+        const formulario = document.querySelector('form')
+        const productos = []
+        const listado = document.querySelector('ul')
+
+        function cargarDatos() {
+            const datos = localStorage.getItem('productos')
+
+            if (datos) {
+                const productos = JSON.parse(datos)
+                for (let producto of productos) {
+                    listado.innerHTML += `<li>${producto.nombre}</li>`
+                }
+            } else {
+                listado.innerHTML = '<li>No hay productos</li>'
+            }
+
+        }
+        cargarDatos()
+
+        formulario.addEventListener('submit', function (event) {
+            event.preventDefault()
+
+            // Tomar los datos del formulario
+            const formData = new FormData(formulario)
+            const obj = Object.fromEntries(formData.entries())
+
+            // Guardarlo
+            productos.push(obj)
+            const productosJSON = JSON.stringify(productos)
+            localStorage.setItem('productos', productosJSON)
+
+            // Mostrar los productos registrados
+            listado.innerHTML += `<li>${obj.nombre}</li>`
+
+            return datos
+        })
+    </script>
+</body>
+
+</html>

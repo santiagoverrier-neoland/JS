@@ -5,6 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        input:user-invalid {
+            border: 2px solid red;
+            background-color: rgb(255, 228, 228);
+        }
+
+        input:user-valid {
+            border: 2px solid green;
+            background-color: lightgreen
+        }
+    </style>
 </head>
 
 <body>
@@ -12,7 +24,8 @@
     <form>
         <div>
             <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre">
+            <input type="text" id="nombre" name="nombre" title="No pueden ser números" pattern="^[a-zA-Z]{1,10}$"
+                placeholder="ej: José" required>
         </div>
         <div>
             <label for="apellido">Apellido</label>
@@ -27,10 +40,14 @@
             <input type="text" id="pais" name="pais">
         </div>
         <div>
+            <label for="telefono">Teléfono</label>
+            <input type="tel" name="telefono" id="telefono" placeholder="10-2000-1000">
+        </div>
+        <div>
             <label for="edad">Edad</label>
             <input type="text" id="edad" name="edad">
         </div>
-         <div>
+        <div>
             <label for="correo">Correo Electrónico</label>
             <input type="text" id="correo" name="correo">
         </div>
@@ -50,8 +67,8 @@
             event.preventDefault()
             const formData = new FormData(formulario)
             console.log("formData.entries()", formData.entries())
-            const datos = Object.fromEntries(formData.entries()) 
-            
+            const datos = Object.fromEntries(formData.entries())
+
             console.log("datos", datos)
             return datos
         })

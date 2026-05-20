@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 4 — Modo oscuro</title>
+    <style>
+        .dark {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Mi página web</h1>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam inventore ea vel ducimus! Inventore, cumque.</p>
+
+    <button>Cambiar modo</button>
+
+    <script>
+        const boton = document.querySelector("button")
+        const cuerpo = document.querySelector("body")
+
+        boton.addEventListener('click', function() {
+            if (cuerpo.classList.value == '') {
+                cuerpo.classList.add('dark')
+            } else {
+                cuerpo.classList.remove('dark')
+            }
+        })
+    </script>
+</body>
+
+</html>

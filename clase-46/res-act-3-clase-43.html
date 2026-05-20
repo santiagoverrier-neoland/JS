@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 3 — Cambiar estilos</title>
+</head>
+<body>
+    <h1>Mi página web</h1>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere inventore exercitationem quae architecto aperiam ipsum, culpa suscipit accusantium libero in reiciendis impedit minima? Perferendis dolores et harum aut natus eum.</p>
+
+    <button>¡Darle css!</button>
+
+    <script>
+        const boton = document.querySelector("button")
+        boton.addEventListener('click', function() {
+            document.querySelector("body").style = 'background-color: beige;font-size: 130%; font-family: Arial'
+
+        })
+
+    </script>
+</body>
+</html>

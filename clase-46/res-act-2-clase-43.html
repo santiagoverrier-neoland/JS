@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 2 — Mensaje personalizado</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 11px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <label for="mensaje">Mensaje</label>
+        <input type="text" id="mensaje">
+       
+    </div>
+
+    <button>Realizar</button><br>
+
+     <span class="error"></span>
+    <p></p>
+
+    <script>
+        const boton = document.querySelector("button")
+
+        boton.addEventListener('click', function () {
+            const mensaje = document.querySelector("#mensaje").value
+            const error = document.querySelector(".error")
+            const parrafo = document.querySelector('p')
+
+            if (mensaje) {
+                error.textContent = ""
+                parrafo.textContent = mensaje
+            } else {
+                error.textContent = "No puede quedar vacío el mensaje"
+            }
+
+        })
+
+
+    </script>
+</body>
+
+</html>

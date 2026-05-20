@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 5 — Lista de tareas</title>
+    <style>
+         body {
+            font-family: Arial, Helvetica, sans-serif;
+         }
+    </style>
+</head>
+<body>
+
+    
+    <input type="text" placeholder="Escribir tarea">
+
+    <ul>
+
+    </ul>
+
+    <hr>
+    <small>Referencia: <a href="https://keyjs.dev/es/#keyboard-events-inspector">https://keyjs.dev/es/#keyboard-events-inspector</a></small>
+
+    <script>
+
+        const campo = document.querySelector("input")
+        const lista = document.querySelector("ul")
+
+        campo.addEventListener('keypress', function(e) {
+            if (e.key == 'Enter') {     
+                lista.innerHTML += `<li> ${campo.value}</li>`
+                campo.value = ""
+                campo.focus
+            } 
+        })
+        
+    </script>
+</body>
+</html>

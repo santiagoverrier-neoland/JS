@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 1 — Cambiar texto</title>
+</head>
+<body>
+    
+    <h1>Mi web</h1>
+    <button>Cambiar</button>
+
+    <script>
+        const boton = document.querySelector("button")
+
+        boton.addEventListener('click', function() {
+            const titulo = document.querySelector("h1")
+            titulo.textContent = 'Mi página web'
+            titulo.style.color = 'blue'
+        })
+
+
+    </script>
+</body>
+</html>
